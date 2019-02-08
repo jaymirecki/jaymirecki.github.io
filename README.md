@@ -19,7 +19,8 @@ There really is no setup for this. Visit jaymirecki.github.io or www.cs.tufts.ed
 ## Author
 * Jay (Jarett) Mirecki
 
-##Acknowledgments
+## Acknowledgments
 
 * W3 Schools for the [navigation bar tutorial](https://www.w3schools.com/css/css_navbar.asp)
 * This was completed as a project for the COMP-20 course at Tufts University
+* [W3c Markup Validator](https://validator.w3.org/#validate_by_upload) for HTML standards

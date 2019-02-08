@@ -35,11 +35,17 @@ li:last-child.menu a {
 li.menu a:hover {
     background-color: bisque;
 }
-#profile {
-    width: 200px;
-    align-items: center;
-}
 .content {
     text-align: left;
     margin-left: 140px;
+    margin-right: 140px;
+}
+.profile {
+    display: block;
+    margin: auto;
+    width: 275px;
+    text-align: center;
+}
+img.profile {
+    display: block;
 }
