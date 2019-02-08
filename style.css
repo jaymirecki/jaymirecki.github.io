@@ -1,0 +1,45 @@
+body {
+    font-family: 'Helvetica';
+    background-color: white;
+    text-align: center;
+}
+#title {
+    text-align: center;
+}
+/******************** MENU STYLES ********************/
+#menubar {
+    margin: auto;
+    width: 275px;
+}
+ul.menu {
+    padding: 0px;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: rgb(255, 249, 235);
+    border: 1px solid black;
+}
+li.menu {
+    float: left;
+    border: 1px;
+}
+li.menu a {
+    display: block;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-right: 1px solid black;
+}
+li:last-child.menu a {
+    border-right: none;
+}
+li.menu a:hover {
+    background-color: bisque;
+}
+#profile {
+    width: 200px;
+    align-items: center;
+}
+.content {
+    text-align: left;
+    margin-left: 140px;
+}
