@@ -6,6 +6,11 @@ body {
 #title {
     text-align: center;
 }
+#card {
+    max-width: 500px;
+    text-align: left;
+    margin: auto;
+}
 /******************** MENU STYLES ********************/
 #menubar {
     margin: auto;
@@ -48,4 +53,13 @@ li.menu a:hover {
 }
 img.profile {
     display: block;
+    width: 100px;
+    float: left;
+    margin-right: 3px;
+}
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: blue;
 }
