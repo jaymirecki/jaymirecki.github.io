@@ -5,51 +5,24 @@
         <link rel='stylesheet' type='text/css' href='style.css' />
         <meta charset='utf-8'>
         <link rel="shortcut icon" type="image/ico" href="./favicon.ico"/>
+        <script src="jquery-3.3.1.min.js"></script>
+        <script src="load.js"></script>
+        <script src='resume.js'></script>
     </head>
     <body>
-        <h1 id='title'>Jay Mirecki</h1>
-        <div id='menubar'>
-            <ul class='menu'>
-                <li class='menu'><a href='index.html'>Home</a></li>
-                <li class='menu'><a href='resume.html'>Resume</a></li>
-            </ul>
-        </div>
+        <div id='header'></div>
         <div class='content'>
-            <h2>Resume</h2>
-            <ul>
-                <li><strong>Education:</strong> Tufts University
-                    <ul>
-                        <li>Algorithms (<em>currently enrolled</em>)</li>
-                        <li>Introduction to Machine Learning (<em>currently enrolled</em>)</li>
-                        <li>Web Programming (<em>currently enrolled</em>)</li>
-                        <li>Programming Languages</li>
-                        <li>Computer System Security</li>
-                        <li>Machine Structure and Assembly Language Programming</li>
-                        <li>Data Structures</li>
-                    </ul></li>
-                <li><strong>Professional Experience</strong>
-                    <ul>
-                        <li><em>Teaching Assistant</em>, Tufts Computer Science Department</li>
-                        <li><em>Operations and Quality Assurance Intern</em>, <a href="https://www.trustedpatientcoach.com/">Health Helm</a></li>
-                        <li><em>Sales Coordinator</em>, East Lyme Parks and Recreation Department</li>
-                    </ul></li>
-                <li><strong>Selected Projects</strong>
-                    <ul>
-                        <li><em><a href="https://github.com/jaymirecki/gsws">GSWS</a></em>: Virtual world simulator, programmed in C#</li>
-                        <li><em><a href="https://github.com/jaymirecki/grid">Grid</a></em>: A* search algorithm, implemented in C++</li>
-                        <li><em><a href="https://jaymirecki.github.io/projects/roguerocket/">Rogue Rocket Site</a></em>: Example news aggregation website</li>
-                    </ul></li>
-                <li><strong>Skills</strong>
-                    <ul>
-                        <li>Languages: C++, C, C#, HTML, CSS, PHP, LUA, Python</li>
-                        <li>Software: JIRA, Microsoft Visual Studio, Linux, Git</li>
-                    </ul></li>
-                <li><strong>Activities</strong>
-                    <ul>
-                        <li><em>Counselor</em>, Camp Rising Sun</li>
-                        <li><em>Founder</em>, Ride for Rising Sun</li>
-                    </ul></li>
-            </ul>
+            <h2>Resume: Click a section to expand</h2>
+            <div id='schoolHeader'><h3>Education</h3></div>
+            <div id='school'></div>
+            <div id='workHeader'><h3>Professional Experience</h3></div>
+            <div id='work'></div>
+            <div id='projectsHeader'><h3>Selected Projects</h3></div>
+            <div id='projects'></div>
+            <div id='skillsHeader'><h3>Skills</h3></div>
+            <div id='skills'></div>
+            <div id='activitesHeader'><h3>Activites</h3></div>
+            <div id='activites'></div>
         </div>
     </body>
 </html>
