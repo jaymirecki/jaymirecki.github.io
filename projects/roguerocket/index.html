@@ -5,25 +5,22 @@
         <link rel='stylesheet' type='text/css' href='roguerocket.css' />
         <meta charset='utf-8'>
         <link rel="shortcut icon" type="image/ico" href="./favicon.ico"/>
+        <script src='jquery-3.3.1.min.js'></script>
+        <script src='auth.js'></script>
         <script type="text/javascript" src="load_elements.js"></script>
         <script src="https://apis.google.com/js/api.js"></script>
         <script type="text/javascript" src="home.js"></script>
+        <script src="https://apis.google.com/js/client.js?onload=onClientLoad" type="text/javascript">        </script>
     </head>
     <body>
         <div id="menubar"></div>
         <div id="vids"></div>
-        <div id="content">
-            <div id="pds">
-                <iframe src="https://www.youtube.com/embed/-UYj3yfBBg4" frameborder="2px" allowfullscreen></iframe>
-            </div>
-            <div id="deep">
-
-            </div>
-            <div id="stories">
-
-            </div>
-        </div>
         <div id="tweets"></div>
+        <div id="content">
+            <div id="pds" class="half"></div>
+            <div id="deep" class="half"></div>
+            <div id="stories"></div>
+        </div>
         <div id="footer"></div>
     </body>
 </html>

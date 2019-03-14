@@ -47,11 +47,12 @@ img.menu {
 }
 #vids {
     background-color: blue;
-    position: absolute;
     float: left;
 }
 #content {
     background-color: gray;
+    float: left;
+    width: calc(100% - 400px);
 }
 #tweets {
     background-color: green;
@@ -61,12 +62,21 @@ img.menu {
     background-color: #953734;
     height: 100px;
     width: 99%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 
 /***** Home Page Styling *****/
-#pds {
-    margin-left: 200px;
-    max-width: 100px;
+#pds, #deep {
+    /* margin-left: 200px; */
+    float: left;
+    width: calc(50% - 20px);
+    margin-left: 10px;
 }
+.full {
+    width: 100%;
+}
+/* #deep {
+    float: right;
+    max-width: ;
+} */

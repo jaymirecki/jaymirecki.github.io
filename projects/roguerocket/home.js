@@ -1,33 +1,85 @@
-function start() {
-    // 2. Initialize the JavaScript client library.
-    gapi.client.init({
-      'apiKey': 'AIzaSyC9FbPGYeQJZkHZf_wh6tTxeHvUtspXZ0Y'
-    }).then(function() {
-      // 3. Initialize and make the API request.
-      return gapi.client.request({
-        'path': 'https://people.googleapis.com/v1/people/me?requestMask.includeField=person.names',
-      })
-    }).then(function(response) {
-      console.log(response.result);
-    }, function(reason) {
-      console.log('Error: ' + reason.result.error.message);
-    });
-  };
-function load_pds() {
-    gapi.load('client', start);
-    
-    gapi.client.youtube.channels.list({
-        'part': 'snippet,contentDetails,statistics',
-        'forUsername': 'GoogleDevelopers'
-      }).then(function(response) {
-        var channel = response.result.items[0];
-        console.log('This channel\'s ID is ' + channel.id + '. ' +
-                  'Its title is \'' + channel.snippet.title + ', ' +
-                  'and it has ' + channel.statistics.viewCount + ' views.');
-      });
-    console.log(request);
+function onClientLoad() {
+    gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
 }
-window.onload = function() {
-    load_elements();
-    load_pds();
+  
+  // Called automatically when YouTube API interface is loaded (see line 9).
+function onYouTubeApiLoad() {
+    gapi.client.setApiKey('AIzaSyC9FbPGYeQJZkHZf_wh6tTxeHvUtspXZ0Y');
+    search();
+}
+    
+function search() {
+    // Use the JavaScript client library to create a search.list() API call.
+        var request = gapi.client.youtube.search.list({
+        part: 'snippet',
+        channelId: 'UClFSU9_bUb4Rc6OYfTt5SPw',
+        order: 'date'
+    });
+    
+    // Send the request to the API server,
+    // and invoke onSearchRepsonse() with the response.
+    request.execute(onSearchResponse);
+}
+    
+    // Called automatically with the response of the YouTube API request.
+function onSearchResponse(response) {
+    console.log(response);
+    getPds(response);
+    $(document).ready(function() {
+            $('#pds').html(fillPds(response));
+            $('#deep').html(fillDeep(response));
+    });
+    console.log(getDeep(response));
+}
+function thumbnail(item) {
+    image = item.snippet.thumbnails.high.url;
+    return '<img class="full" src="' + image + '"/>';
+}
+function title(item) {
+    return '<p>' + item.snippet.title + '</p>';
+}
+function link(item) {
+    id = item.id.videoId;
+    console.log(id);
+    return 'https://www.youtube.com/watch?v=' +
+            id;
+}
+function fillPds(response) {
+    vid = getPds(response);
+    image = thumbnail(vid);
+    caption = title(vid);
+    url = link(vid);
+    console.log(url);
+    return '<a href="' +
+            url + '">\
+            <h1>Catch up on the latest PDS:</h1>' +
+            image +
+            caption +
+            '</a>';
+}
+function fillDeep(response) {
+    vid = getDeep(response);
+    image = thumbnail(vid);
+    caption = title(vid);
+    url = link(vid);
+    return '<a href="' +
+            url + '">\
+            <h1>Check out this deep dive:</h1>' +
+            image +
+            caption +
+            '</a>';
+}
+function getPds(response) {
+    for (i = 0; i < response.items.length; i++) {
+        hour = (new Date(response.items[i].snippet.publishedAt)).getHours();
+        if (hour > 14)
+            return response.items[i];
+    }
+}
+function getDeep(response) {
+    for (i = 0; i < response.items.length; i++) {
+        hour = (new Date(response.items[i].snippet.publishedAt)).getHours();
+        if (hour < 15)
+            return response.items[i];
+    }
 }
