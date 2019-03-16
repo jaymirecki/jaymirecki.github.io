@@ -48,7 +48,7 @@ $(document).ready(function() {
             $("#skills").html("<ul>\
                                    <li>Languages: C++, C, C#, HTML, CSS, PHP, LUA, Python, JavaScript</li>\
                                    <li>Software: JIRA, Microsoft Visual Studio, Linux, Git</li>\
-                                   <li>Tools: Numpy, SciKit</il>\
+                                   <li>Tools: Numpy, SciKit, JQuery</il>\
                                </ul>");
         else
             $("#skills").html("");
