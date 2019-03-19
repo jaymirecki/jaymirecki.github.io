@@ -8,15 +8,26 @@ $(document).ready(function() {
     $("#schoolHeader").click(function() {
         school = !school;
         if (school)
-            $("#school").html("<ul>\
-                                    <li>Algorithms (<em>currently enrolled</em>)</li>\
-                                    <li>Introduction to Machine Learning (<em>currently enrolled</em>)</li>\
-                                    <li>Web Programming (<em>currently enrolled</em>)</li>\
-                                    <li>Programming Languages</li>\
-                                    <li>Computer System Security</li>\
-                                    <li>Machine Structure and Assembly Language Programming</li>\
-                                    <li>Data Structures</li>\
-                               </ul>");
+            $("#school").html(
+                   "<ul>\
+                        <li>Computer Science <ul>\
+                            <li>Algorithms (<em>currently enrolled</em>)</li>\
+                            <li>Introduction to Machine Learning (<em>currently enrolled</em>)</li>\
+                            <li>Web Programming (<em>currently enrolled</em>)</li>\
+                            <li>Programming Languages</li>\
+                            <li>Computer System Security</li>\
+                            <li>Machine Structure and Assembly Language Programming</li>\
+                            <li>Data Structures</li></ul></li>\
+                        <li>Biology <ul>\
+                            <li>Principles of Conservation Biology</li>\
+                            <li>Intro Research</li>\
+                            <li>Cell Biology</li>\
+                            <li>Experiments in Cell Biology</li>\
+                            <li>General Physiology I</li>\
+                            <li>General Genetics</li>\
+                            <li>Organisms and Populations</li>\
+                            <li>Cells and Organisms</li>\
+                    </ul>");
         else
             $("#school").html("");
     });

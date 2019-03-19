@@ -5,7 +5,42 @@ function onClientLoad() {
   // Called automatically when YouTube API interface is loaded (see line 9).
 function onYouTubeApiLoad() {
     gapi.client.setApiKey('AIzaSyC9FbPGYeQJZkHZf_wh6tTxeHvUtspXZ0Y');
-    search();
+    channel();
+    //search();
+}
+
+function channel() {
+    var request = gapi.client.youtube.channels.list({
+        part: 'contentDetails',
+        id: 'UClFSU9_bUb4Rc6OYfTt5SPw'
+    });
+    request.execute(onChannelResponse);
+}
+
+function onChannelResponse(response) {
+    var uploadsId = response.items[0].contentDetails.relatedPlaylists.uploads;
+    console.log(uploadsId);
+    uploads(uploadsId);
+}
+
+function uploads(uploadsId) {
+    var request = gapi.client.youtube.playlistItems.list({
+        part: 'snippet',
+        playlistId: uploadsId,
+        maxResults: 5,
+    });
+    request.execute(onUploadsResponse);
+}
+
+function onUploadsResponse(response) {
+    console.log(response);
+    getPds(response);
+    $(document).ready(function() {
+            $('#pds').html(fillPds(response));
+            $('#deep').html(fillDeep(response));
+            $('#vids').html(fillVids(response));
+    });
+    console.log(getDeep(response));
 }
     
 function search() {
@@ -36,18 +71,17 @@ function thumbnail(item) {
     return '<img class="full" src="' + image + '"/>';
 }
 function title(item) {
-    return '<p>' + item.snippet.title + '</p>';
+    return item.snippet.title;
 }
 function link(item) {
     id = item.id.videoId;
-    console.log(id);
     return 'https://www.youtube.com/watch?v=' +
             id;
 }
 function fillPds(response) {
     vid = getPds(response);
     image = thumbnail(vid);
-    caption = title(vid);
+    caption = '<p>' + title(vid) + '</p>';
     url = link(vid);
     console.log(url);
     return '<a href="' +
@@ -68,6 +102,16 @@ function fillDeep(response) {
             image +
             caption +
             '</a>';
+}
+function fillVids(response) {
+    console.log("filling vids");
+    var content = "<h2>Recent Uploads</h2>";
+    for (i = 0; i < response.items.length; i++) {
+        caption = title(response.items[i]);
+        url = link(response.items[i]);
+        content = content + '<p><a href=' + url + '>' + title(response.items[i]) + '</a></p>';
+    }
+    return content;
 }
 function getPds(response) {
     for (i = 0; i < response.items.length; i++) {

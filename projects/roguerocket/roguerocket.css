@@ -1,6 +1,14 @@
 body {
     font-family: sans-serif;
 }
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+    text-decoration: underline;
+}
 /***** Menu Bar Styling *****/
 #menubar, img.menu {
     height: 40px;
@@ -46,17 +54,21 @@ img.menu {
     width: 200px;
 }
 #vids {
-    background-color: blue;
+    /* background-color: blue; */
     float: left;
+    /* border-right: 1px solid black; */
 }
 #content {
-    background-color: gray;
+    /* background-color: gray; */
     float: left;
     width: calc(100% - 400px);
+    /* border-right: 1px solid black;
+    border-left: 1px solid black; */
 }
 #tweets {
-    background-color: green;
+    /* background-color: green; */
     float: right;
+    /* border-left: 1px solid black */
 }
 #footer {
     background-color: #953734;
@@ -71,12 +83,15 @@ img.menu {
     /* margin-left: 200px; */
     float: left;
     width: calc(50% - 20px);
-    margin-left: 10px;
+    height: 100%;
+    /* margin-left: 10px; */
+    padding-left: 5px;
+    padding-right: 5px;
+    /* border-right: 1px solid black; */
+}
+#pds {
+    /* border-left: 1px solid black; */
 }
 .full {
     width: 100%;
 }
-/* #deep {
-    float: right;
-    max-width: ;
-} */
