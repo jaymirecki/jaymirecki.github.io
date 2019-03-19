@@ -22,5 +22,5 @@ function load_vids() {
 }
 function load_tweets() {
     tweets = document.getElementById("tweets");
-    tweets.innerHTML = "<p>This is where recent tweets will be listed</p>"
+    // tweets.innerHTML = "<p>This is where recent tweets will be listed</p>"
 }

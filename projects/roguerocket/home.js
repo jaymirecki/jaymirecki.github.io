@@ -26,7 +26,7 @@ function uploads(uploadsId) {
     var request = gapi.client.youtube.playlistItems.list({
         part: 'snippet',
         playlistId: uploadsId,
-        maxResults: 5,
+        maxResults: 25,
     });
     request.execute(onUploadsResponse);
 }
