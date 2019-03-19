@@ -19,7 +19,6 @@ function channel() {
 
 function onChannelResponse(response) {
     var uploadsId = response.items[0].contentDetails.relatedPlaylists.uploads;
-    console.log(uploadsId);
     uploads(uploadsId);
 }
 
@@ -33,14 +32,12 @@ function uploads(uploadsId) {
 }
 
 function onUploadsResponse(response) {
-    console.log(response);
     getPds(response);
     $(document).ready(function() {
             $('#pds').html(fillPds(response));
             $('#deep').html(fillDeep(response));
             $('#vids').html(fillVids(response));
     });
-    console.log(getDeep(response));
 }
     
 function search() {
@@ -58,13 +55,11 @@ function search() {
     
     // Called automatically with the response of the YouTube API request.
 function onSearchResponse(response) {
-    console.log(response);
     getPds(response);
     $(document).ready(function() {
             $('#pds').html(fillPds(response));
             $('#deep').html(fillDeep(response));
     });
-    console.log(getDeep(response));
 }
 function thumbnail(item) {
     image = item.snippet.thumbnails.high.url;
@@ -74,7 +69,7 @@ function title(item) {
     return item.snippet.title;
 }
 function link(item) {
-    id = item.id.videoId;
+    id = item.snippet.resourceId.videoId;
     return 'https://www.youtube.com/watch?v=' +
             id;
 }
@@ -83,7 +78,6 @@ function fillPds(response) {
     image = thumbnail(vid);
     caption = '<p>' + title(vid) + '</p>';
     url = link(vid);
-    console.log(url);
     return '<a href="' +
             url + '">\
             <h1>Catch up on the latest PDS:</h1>' +
@@ -104,7 +98,6 @@ function fillDeep(response) {
             '</a>';
 }
 function fillVids(response) {
-    console.log("filling vids");
     var content = "<h2>Recent Uploads</h2>";
     for (i = 0; i < response.items.length; i++) {
         caption = title(response.items[i]);
