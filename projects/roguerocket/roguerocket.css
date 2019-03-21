@@ -52,6 +52,8 @@ img.menu {
 }
 #vids, #tweets {
     width: 200px;
+    height: 100vh;
+    overflow: auto;
 }
 #vids {
     /* background-color: blue; */

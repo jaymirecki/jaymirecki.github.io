@@ -48,7 +48,7 @@ $(document).ready(function() {
             $("#projects").html("<ul>\
                                      <li><em><a href='https://github.com/jaymirecki/gsws'>GSWS</a></em>: Virtual world simulator, programmed in C#</li>\
                                      <li><em><a href='https://github.com/jaymirecki/grid'>Grid</a></em>: A* search algorithm, implemented in C++</li>\
-                                     <li><em><a href='https://jaymirecki.github.io/projects/roguerocket/'>Rogue Rocket Site</a></em>: Example news aggregation website</li>\
+                                     <li><em><a href='/projects/roguerocket/'>Rogue Rocket Site</a></em>: Example news aggregation website</li>\
                                  </ul>");
         else
             $("#projects").html("");
