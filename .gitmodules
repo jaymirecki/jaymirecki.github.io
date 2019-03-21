@@ -1,0 +1,3 @@
+[submodule "projects/roguerocket"]
+	path = projects/roguerocket
+	url = https://github.com/jaymirecki/roguerocket
