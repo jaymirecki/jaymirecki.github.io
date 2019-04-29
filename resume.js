@@ -77,7 +77,7 @@ $(document).ready(function() {
         if (projects)
             $("#activites").html("<ul>\
                                       <li><em>Counselor</em>, <a href='http://www.camprisingsun.com/'>Camp Rising Sun</a></li>\
-                                      <li><em>Founder</em>, Ride for Rising Sun</li>\
+                                      <li><em>Founder</em>, <a href='https://www.theday.com/article/20170816/SPORT04/170819523'>Ride for Rising Sun</a></li>\
                                   </ul>");
         else
             $("#activites").html("");
