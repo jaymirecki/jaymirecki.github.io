@@ -10,6 +10,7 @@ $(document).ready(function() {
         if (school)
             $("#school").html(
                    "<ul>\
+                        <li>Tufts University, Class of 2020</li>\
                         <li>Computer Science <ul>\
                             <li>Algorithms (<em>currently enrolled</em>)</li>\
                             <li>Introduction to Machine Learning (<em>currently enrolled</em>)</li>\
@@ -35,9 +36,15 @@ $(document).ready(function() {
         work = !work;
         if (work)
             $("#work").html("<ul>\
-                                 <li><em>Teaching Assistant</em>, Tufts Computer Science Department</li>\
-                                 <li><em>Operations and Quality Assurance Intern</em>, <a href='https://www.trustedpatientcoach.com/'>Health Helm</a></li>\
-                                 <li><em>Sales Coordinator</em>, East Lyme Parks and Recreation Department</li>\
+                                 <li><em>Teaching Assistant</em><br>\
+                                     <a href='https://engineering.tufts.edu/cs/'>Tufts Computer Science Department</a><br>\
+                                     September 2018-Present</li>\
+                                 <li><em>Operations and Quality Assurance Intern</em><br>\
+                                     <a href='https://www.trustedpatientcoach.com/'>Health Helm</a><br>\
+                                     May 2018-August 2018</li>\
+                                 <li><em>Sales Coordinator</em><br>\
+                                     <a href='https://eltownhall.com/government/departments/parks-recreation/'>East Lyme Parks and Recreation Department</a><br>\
+                                     May 2015-August 2017</li>\
                              </ul>");
         else
             $("#work").html("");
@@ -46,6 +53,7 @@ $(document).ready(function() {
         projects = !projects;
         if (projects)
             $("#projects").html("<ul>\
+                                     <li><em><a href='https://noodle-news.herokuapp.com'>Noodle News</a></em>: News aggregator built for Tufts Web Programming course</li>\
                                      <li><em><a href='https://github.com/jaymirecki/gsws'>GSWS</a></em>: Virtual world simulator, programmed in C#</li>\
                                      <li><em><a href='https://github.com/jaymirecki/grid'>Grid</a></em>: A* search algorithm, implemented in C++</li>\
                                      <li><em><a href='/projects/roguerocket/'>Rogue Rocket Site</a></em>: Example news aggregation website</li>\
@@ -58,8 +66,8 @@ $(document).ready(function() {
         if (projects)
             $("#skills").html("<ul>\
                                    <li>Languages: C++, C, C#, HTML, CSS, PHP, LUA, Python, JavaScript</li>\
-                                   <li>Software: JIRA, Microsoft Visual Studio, Linux, Git</li>\
-                                   <li>Tools: Numpy, SciKit, JQuery</il>\
+                                   <li>Software: JIRA, Microsoft Visual Studio, Linux, Git, Heroku</li>\
+                                   <li>Tools: Numpy, SciKit, JQuery, NodeJS, .NET Framework</il>\
                                </ul>");
         else
             $("#skills").html("");
@@ -68,7 +76,7 @@ $(document).ready(function() {
         projects = !projects;
         if (projects)
             $("#activites").html("<ul>\
-                                      <li><em>Counselor</em>, Camp Rising Sun</li>\
+                                      <li><em>Counselor</em>, <a href='http://www.camprisingsun.com/'>Camp Rising Sun</a></li>\
                                       <li><em>Founder</em>, Ride for Rising Sun</li>\
                                   </ul>");
         else
