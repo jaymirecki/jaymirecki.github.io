@@ -11,7 +11,7 @@ body {
     text-align: left;
     margin: auto;
 }
-table {
+table, th, td {
     border: 1px solid black;
 }
 /******************** MENU STYLES ********************/
