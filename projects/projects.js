@@ -37,7 +37,7 @@ function showProjects() {
                 <td><a href="' + currProj.link + '">' + 
                     currProj.title + '</a></td>\
                 <td>' + currProj.collaborators + '</td>\
-                <td>' + currProj.description + '</td>\
+                <td class="description">' + currProj.description + '</td>\
             </tr>';
         projString += currString;
         // console.log(projString);
